@@ -63,7 +63,7 @@ public class Celda extends JButton{
                 }
             }
             if (it==((Inicio.filas*Inicio.columnas)-Inicio.minas)){
-                Inicio.gano=True;
+                Inicio.gano=true;
             }
 }
 public void darClick(){

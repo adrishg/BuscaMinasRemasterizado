@@ -5,6 +5,7 @@
  */
 package buscaminasjava.clases;
 
+import buscaminasjava.Anuncio;
 import buscaminasjava.Inicio;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -29,7 +30,7 @@ public class Celda extends JButton{
         
         
         this.setMinimumSize(new Dimension(33,9));
-        this.setBackground(new java.awt.Color(0,0,204));
+        this.setBackground(new java.awt.Color(33,91,115));
         this.setFont(new java.awt.Font("Arial",1,12));
         this.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +65,7 @@ public class Celda extends JButton{
             }
             if (it==((Inicio.filas*Inicio.columnas)-Inicio.minas)){
                 Inicio.gano=true;
+                
             }
 }
 public void darClick(){
@@ -81,6 +83,11 @@ public void darClick(){
                             }}
                         }
                         Inicio.gano=true;
+                        Anuncio stevatoGano= new Anuncio(Inicio.jDesktopPane1);
+                        Inicio.jDesktopPane1.add(stevatoGano);
+                        stevatoGano.show();
+                        stevatoGano.setVisible(true);
+                        //anuncioGano();
                         break;
                     case 1:
                         int cont=0;
@@ -119,4 +126,22 @@ public void darClick(){
     
     
 }
+/*
+public JPanel anuncioGano(){
+    JButton salir = new JButton("Salir");
+    JButton jugarAgain = new JButton("Jugar");
+
+    JPanel anuncio = new JPanel();
+    
+    anuncio.add(salir);
+    salir.addActionListener((ActionListener) this);
+    anuncio.add(jugarAgain);
+    jugarAgain.addActionListener((ActionListener) this);
+    
+    return anuncio;
+
+}*/
+        
+       
+
 }
